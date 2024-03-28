@@ -9,7 +9,7 @@ export default function Home() {
       <Auth0Provider
         domain="dev-dtfvvz54odjlgruy.us.auth0.com"
         clientId="XwQ3KnLulnmepgLghWSebKty5Y0CnSFq"
-        authorizationParams={{redirect_uri: "http://localhost:3000"}}
+        authorizationParams={{redirect_uri: "https://worksheet-alpha.vercel.app"}}
       >
         <Page />
       </Auth0Provider>
