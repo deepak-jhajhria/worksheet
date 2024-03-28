@@ -16,7 +16,6 @@ import counter from "../../../public/assets/images/counter.png"
 import lemon from "../../../public/assets/images/lemon.png"
 import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
-import Profile from "../components/Profile";
 import { useAuth0 } from "@auth0/auth0-react";
 const Page = () => {
     const [first, setfirst] = useState(0)
@@ -62,9 +61,6 @@ const Page = () => {
         },
 
     ]
-    // if (isLoading) {
-    //     return <div>Loading ...</div>;
-    // }
     return (
         isAuthenticated && (
             <div className="container w-full max-w-full">
@@ -89,10 +85,10 @@ const Page = () => {
                             <div className="flex justify-end w-full min-h-[50px]">
                                 {
                                     isAuthenticated && (
-                                        <div className="flex items-center justify-between px-4 py-2 bg-white rounded-full">
-                                            <div className="flex items-center gap-3">
+                                        <div className="flex items-center justify-between px-8 py-2 bg-white rounded-full">
+                                            <div className="flex items-center gap-8">
                                                 <Image className="w-10 h-10 rounded-full" src={user.picture} alt={user.name} width={38} height={38} />
-                                                <h2 className="font-sans text-sm font-semibold text-black opacity-90">{user.name}</h2>
+                                                <h2 className="font-sans text-xl font-semibold text-black opacity-90">{user.name}</h2>
                                             </div>
                                         </div>
                                     )
