@@ -28,7 +28,7 @@ const Page = () => {
     function tabchange(tabs) {
         setfirst(tabs)
     }
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { user, isAuthenticated } = useAuth0();
     const workData = [
         {
             january: [
@@ -87,7 +87,7 @@ const Page = () => {
                                     isAuthenticated && (
                                         <div className="flex items-center justify-between px-8 py-2 bg-white rounded-full">
                                             <div className="flex items-center gap-8">
-                                                <Image className="w-10 h-10 rounded-full" src={user.picture} alt={user.name} width={38} height={38} />
+                                                <img className="w-10 h-10 rounded-full" src={user.picture} alt={user.name} width={38} height={38} />
                                                 <h2 className="font-sans text-xl font-semibold text-black opacity-90">{user.name}</h2>
                                             </div>
                                         </div>
