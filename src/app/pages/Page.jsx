@@ -14,6 +14,9 @@ import calculator from "../../../public/assets/images/calculator.jpg"
 import dompkong from "../../../public/assets/images/dompkong.png"
 import counter from "../../../public/assets/images/counter.png"
 import lemon from "../../../public/assets/images/lemon.png"
+import LoginButton from "../components/LoginButton";
+import LogoutButton from "../components/LogoutButton";
+import Profile from "../components/Profile";
 
 const Page = () => {
     const [first, setfirst] = useState(0)
@@ -64,6 +67,9 @@ const Page = () => {
                 <div className="min-h-screen col-span-2 bg-white rounded-lg shadow-md">
                     <h1 className="pt-10 font-sans text-3xl font-medium text-center text-black">WorkSheet 2024</h1>
                     <div className="flex flex-col items-center justify-center gap-6 pt-16">
+                        <LoginButton />
+                        <LogoutButton />
+                        <Profile />
                         <button onClick={() => tabchange(0)} className={`${first === 0 && "text-[#1B59F8] bg-[#E9EFFF]"} text-base capitalize font-sans py-3 px-10 rounded-lg`}>January</button>
                         <button onClick={() => tabchange(1)} className={`${first === 1 && "text-[#1B59F8] bg-[#E9EFFF]"} text-base capitalize font-sans py-3 px-10 rounded-lg`}>February</button>
                         <button onClick={() => tabchange(2)} className={`${first === 2 && "text-[#1B59F8] bg-[#E9EFFF]"} text-base capitalize font-sans py-3 px-10 rounded-lg`}>March</button>
