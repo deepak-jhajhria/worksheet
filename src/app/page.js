@@ -1,7 +1,6 @@
 "use client";
 import { Auth0Provider } from "@auth0/auth0-react";
 import Page from "./pages/Page";
-import { redirect } from "next/dist/server/api-utils";
 
 export default function Home() {
   return (
