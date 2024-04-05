@@ -9,6 +9,7 @@ import nexai from "../../../public/assets/images/nexai.png"
 import exgames from "../../../public/assets/images/exgames.bmp"
 import dino from "../../../public/assets/images/dinolfg.png"
 import coin from "../../../public/assets/images/coin.png"
+import Nobelmind from "../../../public/assets/images/noblemind.bmp"
 import furniture from "../../../public/assets/images/furniture.png"
 import calculator from "../../../public/assets/images/calculator.jpg"
 import dompkong from "../../../public/assets/images/dompkong.png"
@@ -61,7 +62,7 @@ const Page = () => {
         },
         {
             april: [
-                { id: 1, title: "Cloopp", gitHubLink: "https://github.com/deepak-jhajhria/nodel-mind.git", liveLink: "https://nodel-mind.vercel.app/", image: (cloopp), date: "06", },
+                { id: 1, title: "Nobel Mind", gitHubLink: "https://github.com/deepak-jhajhria/nodel-mind.git", liveLink: "https://nodel-mind.vercel.app/", image: (Nobelmind), date: "05", },
             ]
         },
 
