@@ -48,7 +48,7 @@ export const workData = [
         april: [
             { id: 1, title: "Nobel Mind", gitHubLink: "https://github.com/deepak-jhajhria/nodel-mind.git", liveLink: "https://nodel-mind.vercel.app/", image: (Nobelmind), date: "05", },
             { id: 2, title: "Cupid-Ai", gitHubLink: "https://github.com/deepak-jhajhria/cupid-ai.git", liveLink: "https://cupid-ai-coel.vercel.app/", image: (cupidAi), date: "11", },
-            { id: 3, title: "EmailJS-withValidation", gitHubLink: "https://github.com/deepak-jhajhria/Email.jsWithFormValidation.git", liveLink: "https://email-js-with-form-validation.vercel.app/", image: (emailJs), date: "11", },
+            { id: 3, title: "EmailJS-withValidation", gitHubLink: "https://github.com/deepak-jhajhria/Email.jsWithFormValidation.git", liveLink: "https://email-js-with-form-validation.vercel.app/", image: (emailJs), date: "12", },
         ]
     },
 
