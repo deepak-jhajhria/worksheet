@@ -8,7 +8,13 @@ import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 const Page = () => {
-    const [first, setfirst] = useState(0)
+    function getDate() {
+        const today = new Date();
+        const month = today.getMonth()
+        return month
+    }
+    console.log(getDate());
+    const [first, setfirst] = useState(getDate())
     const [Loading, setLoading] = useState(true);
     useEffect(() => {
         setTimeout(() => {
