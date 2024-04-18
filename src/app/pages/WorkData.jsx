@@ -13,6 +13,7 @@ import counter from "../../../public/assets/images/counter.png"
 import lemon from "../../../public/assets/images/lemon.png"
 import cupidAi from "../../../public/assets/images/cupidai.png"
 import emailJs from "../../../public/assets/images/emailjs.png"
+import hooks from "../../../public/assets/images/hooks.png"
 
 export const workData = [
     {
@@ -49,6 +50,7 @@ export const workData = [
             { id: 1, title: "Nobel Mind", gitHubLink: "https://github.com/deepak-jhajhria/nodel-mind.git", liveLink: "https://nodel-mind.vercel.app/", image: (Nobelmind), date: "05", },
             { id: 2, title: "Cupid-Ai", gitHubLink: "https://github.com/deepak-jhajhria/cupid-ai.git", liveLink: "https://cupid-ai-coel.vercel.app/", image: (cupidAi), date: "11", },
             { id: 3, title: "EmailJS-withValidation", gitHubLink: "https://github.com/deepak-jhajhria/Email.jsWithFormValidation.git", liveLink: "https://email-js-with-form-validation.vercel.app/", image: (emailJs), date: "12", },
+            { id: 4, title: "React-Hooks", gitHubLink: "https://github.com/deepak-jhajhria/react-hooks.git", liveLink: "https://react-hooks-rho-woad.vercel.app/", image: (hooks), date: "18", },
         ]
     },
 
