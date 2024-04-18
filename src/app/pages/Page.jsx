@@ -7,15 +7,32 @@ import { useEffect, useState } from "react"
 import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
+import imageSelf from "../../../public/assets/images/deepakimg.jpg"
 const Page = () => {
-    function getDate() {
-        const today = new Date();
-        const month = today.getMonth()
-        return month
-    }
-    console.log(getDate());
     const [first, setfirst] = useState(getDate())
     const [Loading, setLoading] = useState(true);
+    function getDate() {
+        const today = new Date();
+        const first = today.getMonth() + 1
+        return first
+    }
+    let month = first;
+    switch (month) {
+        case 0: month = "Profile"; break;
+        case 1: month = "Jan"; break;
+        case 2: month = "Feb"; break;
+        case 3: month = "Mar"; break;
+        case 4: month = "Apr"; break;
+        case 5: month = "May"; break;
+        case 6: month = "Jun"; break;
+        case 7: month = "Jul"; break;
+        case 8: month = "Aug"; break;
+        case 9: month = "Sep"; break;
+        case 10: month = "Oct"; break;
+        case 11: month = "Nov"; break;
+        case 12: month = "Dec"; break;
+        default: month = ""; break;
+    }
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
@@ -24,20 +41,22 @@ const Page = () => {
     function tabchange(tabs) {
         setfirst(tabs)
     }
+    useEffect(() => {
+        document.title = `${month} | Worksheet`;
+    }, [month]);
     const { user, isAuthenticated } = useAuth0();
-
     return (
         <div className="container w-full max-w-full">
             <div className="grid min-h-screen grid-cols-8">
                 <div className="col-span-2 bg-white rounded-lg shadow-md">
                     <div className="flex flex-col items-center justify-between h-full">
-                        <div>
-                            <h1 className="pt-10 font-sans text-3xl font-medium text-center text-black">WorkSheet 2024</h1>
+                        <div className="pt-10">
+                            <Link onClick={() => tabchange(0)} href={"/"} className="font-sans text-3xl font-medium text-center text-black ">WorkSheet 2024</Link>
                             <div className="flex flex-col items-center justify-center gap-6 pt-16">
-                                <button onClick={() => tabchange(0)} className={`${first === 0 && "text-[#1B59F8] bg-[#E9EFFF]"} text-base capitalize font-sans py-3 px-10 rounded-lg`}>January</button>
-                                <button onClick={() => tabchange(1)} className={`${first === 1 && "text-[#1B59F8] bg-[#E9EFFF]"} text-base capitalize font-sans py-3 px-10 rounded-lg`}>February</button>
-                                <button onClick={() => tabchange(2)} className={`${first === 2 && "text-[#1B59F8] bg-[#E9EFFF]"} text-base capitalize font-sans py-3 px-10 rounded-lg`}>March</button>
-                                <button onClick={() => tabchange(3)} className={`${first === 3 && "text-[#1B59F8] bg-[#E9EFFF]"} text-base capitalize font-sans py-3 px-10 rounded-lg`}>April</button>
+                                <button onClick={() => tabchange(1)} className={`${first === 1 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg font-medium capitalize font-sans py-3 px-10 rounded-lg`}>January</button>
+                                <button onClick={() => tabchange(2)} className={`${first === 2 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg font-medium capitalize font-sans py-3 px-10 rounded-lg`}>February</button>
+                                <button onClick={() => tabchange(3)} className={`${first === 3 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg font-medium capitalize font-sans py-3 px-10 rounded-lg`}>March</button>
+                                <button onClick={() => tabchange(4)} className={`${first === 4 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg font-medium capitalize font-sans py-3 px-10 rounded-lg`}>April</button>
                             </div>
                         </div>
                         <div className="px-4 py-2 pb-10 bg-white rounded-full">
@@ -72,6 +91,34 @@ const Page = () => {
                     <div className="overflow-y-scroll h-[550px] m-10 mt-5">
                         {
                             first === 0 && <div className="p-4 bg-white shadow-xl rounded-2xl">
+                                <div className="flex items-center justify-between pl-10">
+                                    <div>
+                                        <Image className="object-cover w-20 h-20 rounded-full" src={imageSelf} alt="Deepak" width={50} height={50} />
+                                        <h2 className="pt-5 font-sans text-5xl font-bold text-black">Hey,  I am Deepak</h2>
+                                        <p className="pt-3 font-sans text-2xl font-medium text-black">This is my <span className="text-red-500">Worksheet-2024</span></p>
+                                    </div>
+                                    <div className="flex flex-col gap-5">
+
+                                    </div>
+                                </div>
+                                <div className="grid grid-cols-3 gap-5 p-10">
+                                    <button onClick={() => tabchange(1)} className={`${first === 1 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>January</button>
+                                    <button onClick={() => tabchange(2)} className={`${first === 2 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>Febuary</button>
+                                    <button onClick={() => tabchange(3)} className={`${first === 3 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>March</button>
+                                    <button onClick={() => tabchange(4)} className={`${first === 4 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>April</button>
+                                    <button onClick={() => tabchange(5)} className={`${first === 5 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>May</button>
+                                    <button onClick={() => tabchange(6)} className={`${first === 6 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>June</button>
+                                    <button onClick={() => tabchange(7)} className={`${first === 7 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>July</button>
+                                    <button onClick={() => tabchange(8)} className={`${first === 8 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>August</button>
+                                    <button onClick={() => tabchange(9)} className={`${first === 9 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>September</button>
+                                    <button onClick={() => tabchange(10)} className={`${first === 10 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>October</button>
+                                    <button onClick={() => tabchange(11)} className={`${first === 11 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>November</button>
+                                    <button onClick={() => tabchange(12)} className={`${first === 12 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg capitalize font-medium font-sans duration-300 hover:bg-[#E9EFFF] hover:text-[#1B59F8] bg-black text-white py-3 px-10 rounded-lg`}>December</button>
+                                </div>
+                            </div>
+                        }
+                        {
+                            first === 1 && <div className="p-4 bg-white shadow-xl rounded-2xl">
                                 {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">January Topics :-</h2>)}
                                 <div className="flex flex-col gap-5">
                                     {workData[0].january.map((data, index) => (
@@ -90,7 +137,7 @@ const Page = () => {
                             </div>
                         }
                         {
-                            first === 1 && <div className="p-4 bg-white shadow-xl rounded-2xl">
+                            first === 2 && <div className="p-4 bg-white shadow-xl rounded-2xl">
                                 {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">February Topics :-</h2>)}
                                 <div className="flex flex-col gap-5">
                                     {workData[1].feb.map((data, index) => (
@@ -109,7 +156,7 @@ const Page = () => {
                             </div>
                         }
                         {
-                            first === 2 && <div className="p-4 bg-white shadow-xl rounded-2xl">
+                            first === 3 && <div className="p-4 bg-white shadow-xl rounded-2xl">
                                 {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">March Topics :-</h2>)}
                                 <div className="flex flex-col gap-5">
                                     {workData[2].march.map((data, index) => (
@@ -128,7 +175,7 @@ const Page = () => {
                             </div>
                         }
                         {
-                            first === 3 && <div className="p-4 bg-white shadow-xl rounded-2xl">
+                            first === 4 && <div className="p-4 bg-white shadow-xl rounded-2xl">
                                 {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">April Topics :-</h2>)}
                                 <div className="flex flex-col gap-5">
                                     {workData[3].april.map((data, index) => (
