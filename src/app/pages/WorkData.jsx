@@ -6,6 +6,7 @@ import exgames from "../../../public/assets/images/exgames.bmp"
 import dino from "../../../public/assets/images/dinolfg.png"
 import coin from "../../../public/assets/images/coin.png"
 import Nobelmind from "../../../public/assets/images/noblemind.bmp"
+import Aureggo from "../../../public/assets/images/Aureggo-Whitepaper.bmp"
 import furniture from "../../../public/assets/images/furniture.png"
 import calculator from "../../../public/assets/images/calculator.jpg"
 import dompkong from "../../../public/assets/images/dompkong.png"
@@ -48,9 +49,10 @@ export const workData = [
     {
         april: [
             { id: 1, title: "Nobel Mind", gitHubLink: "https://github.com/deepak-jhajhria/nodel-mind.git", liveLink: "https://nodel-mind.vercel.app/", image: (Nobelmind), date: "05", },
-            { id: 2, title: "Cupid-Ai", gitHubLink: "https://github.com/deepak-jhajhria/cupid-ai.git", liveLink: "https://cupid-ai-coel.vercel.app/", image: (cupidAi), date: "11", },
-            { id: 3, title: "EmailJS-withValidation", gitHubLink: "https://github.com/deepak-jhajhria/Email.jsWithFormValidation.git", liveLink: "https://email-js-with-form-validation.vercel.app/", image: (emailJs), date: "12", },
-            { id: 4, title: "React-Hooks", gitHubLink: "https://github.com/deepak-jhajhria/react-hooks.git", liveLink: "https://react-hooks-rho-woad.vercel.app/", image: (hooks), date: "18", },
+            { id: 2, title: "Aureggo-Whitepaper", gitHubLink: "https://github.com/deepak-jhajhria/Aureggo-Whitepaper.git", liveLink: "https://aureggo-whitepaper.vercel.app/", image: (Aureggo), date: "07", },
+            { id: 3, title: "Cupid-Ai", gitHubLink: "https://github.com/deepak-jhajhria/cupid-ai.git", liveLink: "https://cupid-ai-coel.vercel.app/", image: (cupidAi), date: "11", },
+            { id: 4, title: "EmailJS-withValidation", gitHubLink: "https://github.com/deepak-jhajhria/Email.jsWithFormValidation.git", liveLink: "https://email-js-with-form-validation.vercel.app/", image: (emailJs), date: "12", },
+            { id: 5, title: "React-Hooks", gitHubLink: "https://github.com/deepak-jhajhria/react-hooks.git", liveLink: "https://react-hooks-rho-woad.vercel.app/", image: (hooks), date: "18", },
         ]
     },
 
