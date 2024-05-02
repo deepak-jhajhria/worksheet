@@ -141,8 +141,9 @@ const Page = () => {
                             </div>
                         }
                         {
-                            first === 2 && <div className="p-4 bg-white shadow-xl rounded-2xl">
+                            first === 2 && <div className="relative p-4 bg-white shadow-xl rounded-2xl">
                                 {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">February Topics :-</h2>)}
+                                <a href="/assets/pdf/febKPI.pdf" alt="alt text" target="_blank" className="absolute top-10 right-10 text-lg capitalize font-medium font-sans duration-300 bg-[#E9EFFF] text-[#1B59F8] hover:shadow-md py-3 px-10 rounded-lg" rel="noopener noreferrer" >Month Report</a>
                                 <div className="flex flex-col gap-5">
                                     {workData[1].feb.map((data, index) => (
                                         <div className="flex gap-3 pt-5 min-h-20" key={index}>
@@ -160,8 +161,9 @@ const Page = () => {
                             </div>
                         }
                         {
-                            first === 3 && <div className="p-4 bg-white shadow-xl rounded-2xl">
+                            first === 3 && <div className="relative p-4 bg-white shadow-xl rounded-2xl">
                                 {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">March Topics :-</h2>)}
+                                <a href="/assets/pdf/marchKPI.pdf" alt="alt text" target="_blank" className="absolute top-10 right-10 text-lg capitalize font-medium font-sans duration-300 bg-[#E9EFFF] text-[#1B59F8] hover:shadow-md py-3 px-10 rounded-lg" rel="noopener noreferrer" >Month Report</a>
                                 <div className="flex flex-col gap-5">
                                     {workData[2].march.map((data, index) => (
                                         <div className="flex gap-3 pt-5 min-h-20" key={index}>
@@ -179,8 +181,9 @@ const Page = () => {
                             </div>
                         }
                         {
-                            first === 4 && <div className="p-4 bg-white shadow-xl rounded-2xl">
+                            first === 4 && <div className="relative p-4 bg-white shadow-xl rounded-2xl">
                                 {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">April Topics :-</h2>)}
+                                <a href="/assets/pdf/aprilKPI.pdf" alt="alt text" target="_blank" className="absolute top-10 right-10 text-lg capitalize font-medium font-sans duration-300 bg-[#E9EFFF] text-[#1B59F8] hover:shadow-md py-3 px-10 rounded-lg" rel="noopener noreferrer" >Month Report</a>
                                 <div className="flex flex-col gap-5">
                                     {workData[3].april.map((data, index) => (
                                         <div className="flex gap-3 pt-5 min-h-20" key={index}>
