@@ -8,6 +8,7 @@ import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import imageSelf from "../../../public/assets/images/deepakimg.jpg"
+// import InputForm from "../components/InputForm";
 const Page = () => {
     const [first, setfirst] = useState(getDate())
     const [Loading, setLoading] = useState(true);
@@ -57,8 +58,10 @@ const Page = () => {
                                 <button onClick={() => tabchange(2)} className={`${first === 2 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg font-medium capitalize font-sans py-3 px-10 rounded-lg`}>February</button>
                                 <button onClick={() => tabchange(3)} className={`${first === 3 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg font-medium capitalize font-sans py-3 px-10 rounded-lg`}>March</button>
                                 <button onClick={() => tabchange(4)} className={`${first === 4 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg font-medium capitalize font-sans py-3 px-10 rounded-lg`}>April</button>
+                                <button onClick={() => tabchange(5)} className={`${first === 5 && "text-[#1B59F8] bg-[#E9EFFF]"} text-lg font-medium capitalize font-sans py-3 px-10 rounded-lg`}>May</button>
                             </div>
                         </div>
+                        {/* <InputForm /> */}
                         <div className="px-4 py-2 pb-10 bg-white rounded-full">
                             <LogoutButton />
                         </div>
@@ -93,7 +96,7 @@ const Page = () => {
                             first === 0 && <div className="p-4 bg-white shadow-xl rounded-2xl">
                                 <div className="flex items-center justify-between pl-10">
                                     <div>
-                                        <Image className="object-cover w-20 h-20 rounded-full" src={imageSelf} alt="Deepak" width={50} height={50} />
+                                        <Image className="object-cover w-20 h-20 rounded-full" src={imageSelf} alt="Deepak image" width={50} height={50} />
                                         <h2 className="pt-5 font-sans text-5xl font-bold text-black">Hey,  I am Deepak</h2>
                                         <p className="pt-3 font-sans text-2xl font-medium text-black">This is my <span className="text-red-500">Worksheet-2024</span></p>
                                     </div>
@@ -118,8 +121,9 @@ const Page = () => {
                             </div>
                         }
                         {
-                            first === 1 && <div className="p-4 bg-white shadow-xl rounded-2xl">
+                            first === 1 && <div className="relative p-4 bg-white shadow-xl rounded-2xl">
                                 {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">January Topics :-</h2>)}
+                                <a href="/assets/pdf/janKPI.pdf" alt="alt text" target="_blank" className="absolute top-10 right-10 text-lg capitalize font-medium font-sans duration-300 bg-[#E9EFFF] text-[#1B59F8] hover:shadow-md py-3 px-10 rounded-lg" rel="noopener noreferrer" >Month Report</a>
                                 <div className="flex flex-col gap-5">
                                     {workData[0].january.map((data, index) => (
                                         <div className="flex gap-3 pt-5 min-h-20" key={index}>
@@ -179,6 +183,25 @@ const Page = () => {
                                 {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">April Topics :-</h2>)}
                                 <div className="flex flex-col gap-5">
                                     {workData[3].april.map((data, index) => (
+                                        <div className="flex gap-3 pt-5 min-h-20" key={index}>
+                                            {Loading ? (<Skeleton variant="text" sx={{ fontSize: '3rem' }} />) : (<span className="flex items-center justify-center p-2 text-xs text-white bg-green-500 rounded-full">{data.id}</span>)}
+                                            {Loading ? (<Skeleton sx={{ bgcolor: 'grey.100' }} variant="rounded" width={210} height={118} />) : (<Image src={data.image} alt={data.title} className=" rounded-xl max-w-[200px] w-full" width={210} height={118} />)}
+                                            <div className="flex flex-col max-w-[470px] w-full gap-2">
+                                                {Loading ? (<Skeleton variant="text" sx={{ fontSize: '1.5rem' }} />) : (<h3 className="text-xl font-bold capitalize">{data.title}<span className="ml-5 text-sm font-light opacity-90">Date of submisson:- {data.date}-04-2024</span></h3>)}
+                                                {Loading ? (<Skeleton variant="text" sx={{ fontSize: '1rem' }} />) : (<Link target="_blank" href={data.gitHubLink} className="text-gray-600">GitHub link:- <span className="text-blue-500 ">{data.gitHubLink}</span></Link>)}
+                                                {Loading ? (<Skeleton variant="text" sx={{ fontSize: '1rem' }} />) : (<Link target="_blank" href={data.liveLink} className="text-gray-600">Live link:- <span className="text-blue-500">{data.liveLink}</span></Link>)}
+                                            </div>
+                                        </div>
+                                    ))
+                                    }
+                                </div>
+                            </div>
+                        }
+                        {
+                            first === 5 && <div className="p-4 bg-white shadow-xl rounded-2xl">
+                                {Loading ? (<Skeleton variant="text" sx={{ fontSize: '2rem' }} />) : (<h2 className="text-2xl text-black opacity-90">May Topics :-</h2>)}
+                                <div className="flex flex-col gap-5">
+                                    {workData[4].may.map((data, index) => (
                                         <div className="flex gap-3 pt-5 min-h-20" key={index}>
                                             {Loading ? (<Skeleton variant="text" sx={{ fontSize: '3rem' }} />) : (<span className="flex items-center justify-center p-2 text-xs text-white bg-green-500 rounded-full">{data.id}</span>)}
                                             {Loading ? (<Skeleton sx={{ bgcolor: 'grey.100' }} variant="rounded" width={210} height={118} />) : (<Image src={data.image} alt={data.title} className=" rounded-xl max-w-[200px] w-full" width={210} height={118} />)}
